@@ -1,0 +1,79 @@
+package uts;
+
+import java.util.Scanner;
+
+public class Soal2 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Program untuk user memilih pola
+        System.out.print("Choose a pattern (A, B, C, or D): ");
+        String patternChoice = input.next();
+
+        // menampilkan pola yang dipilih user
+        switch (patternChoice.toUpperCase()) {
+            case "A":
+                patternA(6);
+                break;
+            case "B":
+                patternB(6);
+                break;
+            case "C":
+                patternC(6);
+                break;
+            case "D":
+                patternD(6);
+                break;
+            default:
+                System.out.println("Invalid pattern choice.");
+                break;
+        }
+    }
+
+    // Program untuk print pola A
+    public static void patternA(int num) {
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Program untuk print pola B
+    public static void patternB(int num) {
+        for (int i = num; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Program untuk print pola C
+    public static void patternC(int num) {
+        for (int i = 1; i <= num; i++) {
+            for (int j = num; j > i; j--) {
+                System.out.print("  ");
+            }
+            for (int k = i; k >= 1; k--) {
+                System.out.print(k + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Program untuk print pola D
+    public static void patternD(int num) {
+        for (int i = num; i >= 1; i--) {
+            for (int j = num; j > i; j--) {
+                System.out.print("  ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print(k + " ");
+            }
+            System.out.println();
+        }
+    }
+}
