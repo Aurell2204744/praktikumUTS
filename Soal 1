@@ -1,0 +1,32 @@
+package uts;
+
+import java.util.Scanner;
+
+public class Soal1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukan tiga digit integer : ");
+        int number = input.nextInt();
+
+        if (isPalindrome(number)) {
+            System.out.println(number + " adalah palindrom");
+        } else {
+            System.out.println(number + " bukan palindrom");
+        }
+    }
+
+    public static boolean isPalindrome(int number) {
+        int reversedNumber = reverse(number);
+        return number == reversedNumber;
+    }
+
+    public static int reverse(int number) {
+        int reversedNumber = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number /= 10;
+        }
+        return reversedNumber;
+    }
+}
